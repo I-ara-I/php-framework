@@ -42,7 +42,7 @@
 | ------------------------------ | ----------------------------------------- |
 | loadSystem(string \$className) | Gibt das aufgerufene System-Objekt zurück |
 | loadModel(string \$className)  | Gibt das aufgerufene Model-Objekt zurück  |
-| getUrl()                       | Gibt die URL aus der Config-Dateie zurück |
+| getUrl()                       | Gibt die URL aus der Config-Datei zurück  |
 
 **Abrufbar wenn von der Klasse Model gerbt wird:**
 
