@@ -49,12 +49,17 @@ class Container
         $this->objects['System\Router']->run();
     }
 
+    /**
+     * Creates the map of the system classes
+     *
+     * @return void
+     */
     private function createMap()
     {
         $this->map = [
             'Router' => 'Router',
             'View' => 'View',
-            'Paramter' => 'Helper\Parameter',
+            'Paramters' => 'Helper\Parameters',
         ];
     }
 
@@ -64,10 +69,10 @@ class Container
      * @param  string $class
      * @return object|boolean
      */
-    public function loadSystem(string $class)
+    public function loadSystem(string $className)
     {
-        if ($this->map[$class]) {
-            $class = self::SYSTEM_PATH . $this->map[$class];
+        if ($this->map[$className]) {
+            $class = self::SYSTEM_PATH . $this->map[$className];
 
             if (isset($this->objects[$class])) {
                 return $this->objects[$class];

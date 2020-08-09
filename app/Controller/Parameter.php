@@ -9,9 +9,9 @@ class Parameter extends Controller
 
     public function index()
     {
-        $paramter = $this->loadSystem('Paramter');
+        $paramter = $this->loadSystem('Paramters');
 
-        $params = $paramter->getParameter(1);
+        $params = $paramter->getParameters(1);
 
         var_dump($params);
     }

@@ -26,7 +26,7 @@ namespace System\Helper;
  * SOFTWARE. 
  */
 
-class Parameter
+class Parameters
 {
     private $params = [];
 
@@ -41,7 +41,7 @@ class Parameter
      * 
      * @return array
      */
-    public function getParameter($mode = 0): array
+    public function getParameters($mode = 0): array
     {
         $this->createParams();
         $this->removeEmptyParams();
