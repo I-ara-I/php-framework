@@ -27,9 +27,9 @@
 
 **Class Parameter:**
 
-| Function                  | Description                         |
-| ------------------------- | ----------------------------------- |
-| getParamters([int $mode]) | Returns the parameters from the URL |
+| Function                      | Description                         |
+| ----------------------------- | ----------------------------------- |
+| getParamters([int $mode = 0]) | Returns the parameters from the URL |
 
 ---
 
@@ -60,6 +60,6 @@
 
 **Klasse Paramterters:**
 
-| Funktion                  | Beschreibung                          |
-| ------------------------- | ------------------------------------- |
-| getParamters([int $mode]) | Gibt die Parameter aus der URL zurück |
+| Funktion                      | Beschreibung                          |
+| ----------------------------- | ------------------------------------- |
+| getParamters([int $mode = 0]) | Gibt die Parameter aus der URL zurück |
