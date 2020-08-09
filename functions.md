@@ -1,4 +1,4 @@
-# Version 0.1.0
+# Version 0.X.0
 
 ## ENGLISH
 
@@ -20,9 +20,10 @@
 
 **Class View:**
 
-| Function                                           | Description                      |
-| -------------------------------------------------- | -------------------------------- |
-| render(string/array $template, [array $data = []]) | Loads the given template file(s) |
+| Function                                           | Description                                                       |
+| -------------------------------------------------- | ----------------------------------------------------------------- |
+| render(string/array $template, [array $data = []]) | Loads the given template file(s)                                  |
+| getTemplate(string $template)                      | Returns the defined template from the file Config\TemplateMap.php |
 
 **Class Parameter:**
 
@@ -52,9 +53,10 @@
 
 **Klasse View:**
 
-| Funktion                                           | Beschreibung                           |
-| -------------------------------------------------- | -------------------------------------- |
-| render(string/array $template, [array $data = []]) | Lädt die überegebene Template-Datei(n) |
+| Funktion                                    | Beschreibung                                                             |
+| ------------------------------------------- | ------------------------------------------------------------------------ |
+| render(array $template, [array $data = []]) | Lädt die überegebene Template-Datei(n)                                   |
+| getTemplate(string $template)               | Gibt das defenierte Template aus der Datei Config\TemplateMap.php zurück |
 
 **Klasse Paramterters:**
 

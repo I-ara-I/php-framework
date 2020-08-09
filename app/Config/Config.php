@@ -9,6 +9,7 @@ class Config
      * * Options: development or production
      * 
      * Important: If the app is live, only use the production mode!
+     * No error messages are displayed in production mode!
      */
     public $mode = 'development';
 

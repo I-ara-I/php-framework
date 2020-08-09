@@ -14,7 +14,7 @@ class Index extends Controller
         $data['siteTitle'] = 'PHP-Framework';
 
         $view = $this->loadSystem('View');
-        $template = ['templates/header', 'index', 'templates/footer'];
+        $template = $view->getTemplate('home');
 
         $view->render($template, $data);
     }

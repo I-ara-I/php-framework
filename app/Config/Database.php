@@ -6,7 +6,7 @@ class Database
 {
     /**
      *Should the database connection be created automatically when a model is loaded?
-     *If set to true, this can be called up with: $this->pdo
+     *If set to true, this can be called up with $this->pdo in the model class.
      */
     public $loadPdo = true;
 
