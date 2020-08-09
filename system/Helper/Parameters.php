@@ -43,12 +43,12 @@ class Parameters
      */
     public function getParameters($mode = 0): array
     {
-        $this->createParams();
-        $this->removeEmptyParams();
+        $this->createParameters();
+        $this->removeEmptyParameters();
         $this->sortArray();
 
         if ($mode === 1) {
-            $this->pairParameter();
+            $this->pairParameters();
         }
 
         return $this->params;
@@ -59,7 +59,7 @@ class Parameters
      *
      * @return void
      */
-    private function createParams()
+    private function createParameters()
     {
         global $container;
 
@@ -90,7 +90,7 @@ class Parameters
      *
      * @return void
      */
-    private function removeEmptyParams()
+    private function removeEmptyParameters()
     {
         while (array_search('', $this->params)) {
             $pos = array_search('', $this->params);
@@ -120,11 +120,12 @@ class Parameters
      *
      * @return void
      */
-    private function pairParameter()
+    private function pairParameters()
     {
         $count = count($this->params);
 
         if ($count === 0 or $count === 1) {
+            $this->params = [];
             return;
         }
 
