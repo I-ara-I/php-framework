@@ -35,6 +35,7 @@ class Container
     private const CONFIG_PATH = 'App\\Config\\';
     private const MODEL_PATH = 'App\\Model\\';
     private $objects = [];
+    private $map = [];
 
     /**
      * The main function. These trigger all further steps to load the page.
@@ -43,26 +44,45 @@ class Container
      */
     public function run()
     {
+        $this->createMap();
         $this->objects['System\Router'] = new Router;
         $this->objects['System\Router']->run();
+    }
+
+    /**
+     * Creates the map of the system classes
+     *
+     * @return void
+     */
+    private function createMap()
+    {
+        $this->map = [
+            'Router' => 'Router',
+            'View' => 'View',
+            'Paramters' => 'Helper\Parameters',
+        ];
     }
 
     /**
      * Creates or loads the called system object
      *
      * @param  string $class
-     * @return object
+     * @return object|boolean
      */
-    public function loadSystem(string $class): object
+    public function loadSystem(string $className)
     {
-        $class = self::SYSTEM_PATH . $class;
+        if ($this->map[$className]) {
+            $class = self::SYSTEM_PATH . $this->map[$className];
 
-        if (isset($this->objects[$class])) {
-            return $this->objects[$class];
+            if (isset($this->objects[$class])) {
+                return $this->objects[$class];
+            } else {
+                $object = new $class;
+                $this->objects[$class] = $object;
+                return $this->objects[$class];
+            }
         } else {
-            $object = new $class;
-            $this->objects[$class] = $object;
-            return $this->objects[$class];
+            return false;
         }
     }
 

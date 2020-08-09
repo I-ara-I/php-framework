@@ -31,11 +31,14 @@ class View extends Base
     /**
      * Calls the view files
      *
-     * @param  mixed $template
-     * @param  mixed $data
-     * @return void
+     * * If an array is passed, every file contained in it will be rendered and return true.
+     * Otherwise false will be returned.
+     * 
+     * @param  array $template File name and path without file extension. 
+     * @param  array $data Data will be extracted. This allows the individual keys to be accessed as variables in the view file.
+     * @return boolean
      */
-    public function render($template, array $data = [])
+    public function render($template, array $data = []): bool
     {
         $path = '../app/View/';
 
@@ -43,14 +46,31 @@ class View extends Base
             extract($data);
         }
 
-        if (is_string($template)) {
-            require_once($path . $template . '.php');
-        }
-
         if (is_array($template)) {
             foreach ($template as $key => $value) {
                 require_once($path . $value . '.php');
             }
+            return true;
         }
+        return false;
+    }
+
+    /**
+     * Returns the defined template from the file Config\TemplateMap.php
+     * 
+     * @param  string $template
+     * @return array|boolean
+     */
+    public function getTemplate(string $template)
+    {
+
+        global $container;
+        $templateMap = $container->loadConfig('TemplateMap');
+
+        if (isset($templateMap->map[$template])) {
+            return $templateMap->map[$template];
+        }
+
+        return false;
     }
 }

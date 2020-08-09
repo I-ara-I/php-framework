@@ -1,6 +1,6 @@
 <?php
 
-namespace System;
+namespace System\Helper;
 
 /** 
  * MIT License
@@ -26,7 +26,7 @@ namespace System;
  * SOFTWARE. 
  */
 
-class Parameter
+class Parameters
 {
     private $params = [];
 
@@ -41,14 +41,14 @@ class Parameter
      * 
      * @return array
      */
-    public function getParameter($mode = 0): array
+    public function getParameters($mode = 0): array
     {
-        $this->createParams();
-        $this->removeEmptyParams();
+        $this->createParameters();
+        $this->removeEmptyParameters();
         $this->sortArray();
 
         if ($mode === 1) {
-            $this->pairParameter();
+            $this->pairParameters();
         }
 
         return $this->params;
@@ -59,7 +59,7 @@ class Parameter
      *
      * @return void
      */
-    private function createParams()
+    private function createParameters()
     {
         global $container;
 
@@ -90,7 +90,7 @@ class Parameter
      *
      * @return void
      */
-    private function removeEmptyParams()
+    private function removeEmptyParameters()
     {
         while (array_search('', $this->params)) {
             $pos = array_search('', $this->params);
@@ -120,11 +120,12 @@ class Parameter
      *
      * @return void
      */
-    private function pairParameter()
+    private function pairParameters()
     {
         $count = count($this->params);
 
         if ($count === 0 or $count === 1) {
+            $this->params = [];
             return;
         }
 

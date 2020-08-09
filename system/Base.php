@@ -41,6 +41,8 @@ class Base
      * If the number of parameters is odd, the last parameter will be removed.
      * @return array
      */
+
+    /*
     protected function getParameter($mode = 0): array
     {
         global $container;
@@ -50,14 +52,15 @@ class Base
 
         return $params;
     }
+    */
 
     /**
      * Returns the  called system object from the container
      *
-     * @param  mixed $value
-     * @return object
+     * @param  string $className
+     * @return object|boolean
      */
-    protected function loadSystem($className): object
+    protected function loadSystem(string $className)
     {
         global $container;
 
@@ -67,10 +70,10 @@ class Base
     /**
      * Returns the called model object from the container
      *
-     * @param  mixed $model
+     * @param  string $model
      * @return object
      */
-    protected function loadModel($className): object
+    protected function loadModel(string $className): object
     {
         global $container;
         $model = $container->loadModel($className);

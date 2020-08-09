@@ -1,57 +1,65 @@
-# ENGLISH
+# Version 0.2.0
 
-## Callable functions:
+## ENGLISH
 
-**If inherited from the Base, Controller, Model or View class:**
+### Callable functions:
 
-- getParamter([int $mode])
-  Returns the parameters from the URL
+**Callable when inherited from the Base, Model, View or Controller classes**
 
-- loadSystem(string \$className)
-  Returns the called system object
+| Function                       | Description                          |
+| ------------------------------ | ------------------------------------ |
+| loadSystem(string \$className) | Returns the called system object     |
+| loadModel(string \$className)  | Returns the called model object      |
+| getUrl()                       | Returns the URL from the config file |
 
-- loadModel(string \$className)
-  Returns the called model object
+**Callable when inherited from the Model class**
 
-- getUrl()
-  Returns the URL from the config files
+| Function  | Description          |
+| --------- | -------------------- |
+| loadPDO() | Returns a PDO object |
 
-**When inherited from the Model class**
+**Class View:**
 
-- loadPDO()
-  Returns a PDO object
+| Function                                           | Description                                                       |
+| -------------------------------------------------- | ----------------------------------------------------------------- |
+| render(string/array $template, [array $data = []]) | Loads the given template file(s)                                  |
+| getTemplate(string $template)                      | Returns the defined template from the file Config\TemplateMap.php |
 
-**Object View:**
+**Class Parameter:**
 
-- render(string/array $template, [array $data = []])
-  Loads the given template file(s)
+| Function                  | Description                         |
+| ------------------------- | ----------------------------------- |
+| getParamters([int $mode]) | Returns the parameters from the URL |
 
 ---
 
-# GERMAN
+## GERMAN
 
-## Aufrufbare Funktionen:
+### Aufrufbare Funktionen:
 
-**Wenn von der Klasse Base, Controller, Model oder View geerbt wird:**
+**Aufrufbar wenn von den Klassen Base, Model, View oder Controller geerbt wird**
 
-- getParamter([int $mode])
-  Gibt die Parameter aus der URL zurück
+| Funktion                       | Beschreibung                              |
+| ------------------------------ | ----------------------------------------- |
+| loadSystem(string \$className) | Gibt das aufgerufene System-Objekt zurück |
+| loadModel(string \$className)  | Gibt das aufgerufene Model-Objekt zurück  |
+| getUrl()                       | Gibt die URL aus der Config-Datei zurück  |
 
-- loadSystem(string \$className)
-  Gibt das aufgerufene System-Objekt zurück
+**Abrufbar wenn von der Klasse Model gerbt wird:**
 
-- loadModel(string \$className)
-  Gibt das aufgerufene Model-Objekt zurück
+| Funktion  | Beschreibung               |
+| --------- | -------------------------- |
+| loadPDO() | Gibt ein PDO-Objekt zurück |
 
-- getUrl()
-  Gibt die URL aus der Config-Dateien zurück
+**Klasse View:**
 
-**Wenn von der Klasse Model gerbt wird:**
+| Funktion                                    | Beschreibung                                                             |
+| ------------------------------------------- | ------------------------------------------------------------------------ |
+| render(array $template, [array $data = []]) | Lädt die überegebene Template-Datei(n)                                   |
+| getTemplate(string $template)               | Gibt das defenierte Template aus der Datei Config\TemplateMap.php zurück |
 
-- loadPDO()
-  Gibt ein PDO-Objekt zurück
+**Klasse Paramterters:**
 
-**Objekt View:**
-
-- render(string/array $template, [array $data = []])
-  Lädt die überegebene Template-Datei(n)
+| Funktion                  | Beschreibung                          |
+| ------------------------- | ------------------------------------- |
+| getParamters([int $mode]) | Gibt die Parameter aus der URL zurück |
