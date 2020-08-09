@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0
+
+**English**
+
+**German**
+
 ## Version 0.2.0
 
 **English**

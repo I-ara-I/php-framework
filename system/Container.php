@@ -60,6 +60,7 @@ class Container
             'Router' => 'Router',
             'View' => 'View',
             'Paramters' => 'Helper\Parameters',
+            'Form' => 'Helper\Form',
         ];
     }
 
