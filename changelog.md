@@ -4,6 +4,8 @@
 
 **English**
 
+- Several files refactored
+
 - REMOVED: `getParamter([int $mode])`
   Can no longer be called directly from the classes Base, Model, View and Controller
 
@@ -14,6 +16,8 @@
 - ADDED: Class `TemplateMap` can be called via `$this->loadConfig('TemplateMap')`
 
 **German**
+
+- Verschiedene Datein überarbeitet
 
 - ENTFERNT: `getParamter([int $mode])`
   Ist nicht mehr direkt aus den Klassen Base, Model, View und Controller aufrufbar
