@@ -1,30 +1,34 @@
+# Version 0.1.0
+
 # ENGLISH
 
 ## Callable functions:
 
-**If inherited from the Base, Controller, Model or View class:**
+**Callable when inherited from the Base, Model, View or Controller classes**
 
-- getParamter([int $mode])
-  Returns the parameters from the URL
+| Function                       | Description                           |
+| ------------------------------ | ------------------------------------- |
+| loadSystem(string \$className) | Returns the called system object      |
+| loadModel(string \$className)  | Returns the called model object       |
+| getUrl()                       | Returns the URL from the config files |
 
-- loadSystem(string \$className)
-  Returns the called system object
+**Callable when inherited from the Model class**
 
-- loadModel(string \$className)
-  Returns the called model object
-
-- getUrl()
-  Returns the URL from the config files
-
-**When inherited from the Model class**
-
-- loadPDO()
-  Returns a PDO object
+| Function  | Description          |
+| --------- | -------------------- |
+| loadPDO() | Returns a PDO object |
 
 **Object View:**
 
-- render(string/array $template, [array $data = []])
-  Loads the given template file(s)
+| Function                                           | Description                      |
+| -------------------------------------------------- | -------------------------------- |
+| render(string/array $template, [array $data = []]) | Loads the given template file(s) |
+
+**Object Parameter:**
+
+| Function                 | Description                      |
+| ------------------------ | -------------------------------- |
+| getParamter([int $mode]) | Loads the given template file(s) |
 
 ---
 
@@ -32,26 +36,28 @@
 
 ## Aufrufbare Funktionen:
 
-**Wenn von der Klasse Base, Controller, Model oder View geerbt wird:**
+**Aufrufbar wenn von den Klassen Base, Model, View oder Controller geerbt wird**
 
-- getParamter([int $mode])
-  Gibt die Parameter aus der URL zurück
+| Funktion                       | Beschreibung                               |
+| ------------------------------ | ------------------------------------------ |
+| loadSystem(string \$className) | Gibt das aufgerufene System-Objekt zurück  |
+| loadModel(string \$className)  | Gibt das aufgerufene Model-Objekt zurück   |
+| getUrl()                       | Gibt die URL aus der Config-Dateien zurück |
 
-- loadSystem(string \$className)
-  Gibt das aufgerufene System-Objekt zurück
+**Abrufbar wenn von der Klasse Model gerbt wird:**
 
-- loadModel(string \$className)
-  Gibt das aufgerufene Model-Objekt zurück
-
-- getUrl()
-  Gibt die URL aus der Config-Dateien zurück
-
-**Wenn von der Klasse Model gerbt wird:**
-
-- loadPDO()
-  Gibt ein PDO-Objekt zurück
+| Funktion  | Beschreibung               |
+| --------- | -------------------------- |
+| loadPDO() | Gibt ein PDO-Objekt zurück |
 
 **Objekt View:**
 
-- render(string/array $template, [array $data = []])
-  Lädt die überegebene Template-Datei(n)
+| Funktion                                           | Beschreibung                           |
+| -------------------------------------------------- | -------------------------------------- |
+| render(string/array $template, [array $data = []]) | Lädt die überegebene Template-Datei(n) |
+
+**Objekt Paramterter:**
+
+| Funktion                 | Beschreibung                          |
+| ------------------------ | ------------------------------------- |
+| getParamter([int $mode]) | Gibt die Parameter aus der URL zurück |

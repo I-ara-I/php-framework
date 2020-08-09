@@ -41,6 +41,8 @@ class Base
      * If the number of parameters is odd, the last parameter will be removed.
      * @return array
      */
+
+    /*
     protected function getParameter($mode = 0): array
     {
         global $container;
@@ -50,6 +52,7 @@ class Base
 
         return $params;
     }
+    */
 
     /**
      * Returns the  called system object from the container
