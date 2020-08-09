@@ -1,6 +1,6 @@
 # Changelog
 
-## Version X
+## Version 0.2.0
 
 **English**
 
