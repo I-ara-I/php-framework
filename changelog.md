@@ -10,6 +10,8 @@
 
 - ADDED: Function `Form::unsetInput()`. Deletes the saved values of the global variable $_POST in the current session.
 
+- REMOVED: `getUrl()`. Can no longer be called directly from the Base, Model, View and Controller classes.
+
 **German**
 
 - HINZUGEFÜGT: Klasse `Form` ist über `$this->loadSystem('Form')` aufrufbar.
@@ -20,6 +22,7 @@
 
 - HINZUGEFÜGT: Funktion `Form::unsetInput()`. Löscht die gespicherten Werte der globalen Variable $_POST in der aktuellen Session ab.
 
+- ENTFERNT: `getUrl()`. Ist nicht mehr direkt aus den Klassen Base, Model, View und Controller aufrufbar.
 
 
 

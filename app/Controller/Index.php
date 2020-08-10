@@ -16,13 +16,6 @@ class Index extends Controller
         $view = $this->loadSystem('View');
         $template = $view->getTemplate('home');
 
-        $form = $this->loadSystem('Form');
-        $form->saveInput();
-        //$form->clearInput();
-        $input = $form->getInput();
-
-        var_dump($input);
-
         $view->render($template, $data);
     }
 }

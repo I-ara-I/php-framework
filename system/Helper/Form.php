@@ -67,6 +67,11 @@ class Form
     }
 
 
+    /**
+     * Deletes the saved values of the global variable $_POST in the current session.
+     *
+     * @return bool
+     */
     public function unsetInput(): bool
     {
         unset($_SESSION['FORMPOST']);
