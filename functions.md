@@ -39,7 +39,7 @@
 | ------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | getInput()   | Returns the values from the global variable $_POST and the stored values from the function `Form::saveInput()` as array. |
 | saveInput()  | Saves the values of the global variable $_POST in the current session.                                                   |
-| unsetInput() | Clears the spiked values of the global variable $_POST in the current session                                            |
+| unsetInput() | Deletes the saved values of the global variable $_POST in the current session.                                           |
 
 ---
 

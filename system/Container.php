@@ -59,7 +59,7 @@ class Container
         $this->map = [
             'Router' => 'Router',
             'View' => 'View',
-            'Paramters' => 'Helper\Parameters',
+            'Parameters' => 'Helper\Parameters',
             'Form' => 'Helper\Form',
         ];
     }
