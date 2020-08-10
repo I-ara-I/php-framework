@@ -28,32 +28,6 @@ namespace System;
 
 class Base
 {
-
-
-    /**
-     * Returns the parameters from the URI
-     *
-     * @param  mixed $mode
-     * * @param  int $mode 
-     * * mode = 0 -> Returns an indexed array with all parameters 
-     * * mode = 1 -> Returns an associative array from the passed parameters. 
-     * The first parameter is the key and the second parameter is the value, etc. 
-     * If the number of parameters is odd, the last parameter will be removed.
-     * @return array
-     */
-
-    /*
-    protected function getParameter($mode = 0): array
-    {
-        global $container;
-        $parameter = $container->loadSystem('Parameter');
-
-        $params = $parameter->getParameter($mode);
-
-        return $params;
-    }
-    */
-
     /**
      * Returns the  called system object from the container
      *

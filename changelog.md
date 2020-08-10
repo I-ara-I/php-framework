@@ -4,7 +4,24 @@
 
 **English**
 
+- ADDED: Function `Form::getInput()`. Returns the values from the global variable $_POST and the stored values from the function `Form::saveInput()` as array.
+
+- ADDED: Function `Form::saveInput()`. Saves the values of the global variable $_POST in the current session.
+
+- ADDED: Function `Form::unsetInput()`. Deletes the saved values of the global variable $_POST in the current session.
+
 **German**
+
+- HINZUGEFÜGT: Klasse `Form` ist über `$this->loadSystem('Form')` aufrufbar.
+
+- HINZUGEFÜGT: Funktion `Form::getInput()`. Gibt die Werte aus der globalen Varibelen $_POST und die gespeicherte Werte aus der Funktion `Form::saveInput()` als Array zurück.
+
+- HINZUGEFÜGT: Funktion `Form::saveInput()`. Speichert die Werte der globalen Variable $_POST in der aktuellen Session ab.
+
+- HINZUGEFÜGT: Funktion `Form::unsetInput()`. Löscht die gespicherten Werte der globalen Variable $_POST in der aktuellen Session ab.
+
+
+
 
 ## Version 0.2.0
 

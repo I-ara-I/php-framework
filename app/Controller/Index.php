@@ -21,13 +21,7 @@ class Index extends Controller
         //$form->clearInput();
         $input = $form->getInput();
 
-        print_r(session_get_cookie_params());
-
-        //print_r($_COOKIE);
-
-
-        // print_r($input);
-        //print_r($_SESSION);
+        var_dump($input);
 
         $view->render($template, $data);
     }

@@ -28,7 +28,12 @@ namespace System\Helper;
 
 class Form
 {
-    public function getInput()
+    /**
+     * Returns the values from the global variable $_POST and the stored values from the function `Form::saveInput()` as array.
+     *
+     * @return array
+     */
+    public function getInput(): array
     {
         $data = [];
 
@@ -47,7 +52,12 @@ class Form
         return $data;
     }
 
-    public function saveInput()
+    /**
+     * Saves the values of the global variable $_POST in the current session.
+     *
+     * @return boolean
+     */
+    public function saveInput(): bool
     {
         foreach ($_POST as $key => $value) {
             $_SESSION['FORMPOST'][$key] = $value;
@@ -56,8 +66,10 @@ class Form
         return true;
     }
 
-    public function clearInput()
+
+    public function unsetInput(): bool
     {
         unset($_SESSION['FORMPOST']);
+        return true;
     }
 }

@@ -31,6 +31,14 @@
 | ----------------------------- | ----------------------------------- |
 | getParamters([int $mode = 0]) | Returns the parameters from the URL |
 
+**Class Form**
+
+| Function     | Description                                                                                                              |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| getInput()   | Returns the values from the global variable $_POST and the stored values from the function `Form::saveInput()` as array. |
+| saveInput()  | Saves the values of the global variable $_POST in the current session.                                                   |
+| unsetInput() | Clears the spiked values of the global variable $_POST in the current session                                            |
+
 ---
 
 ## GERMAN
@@ -63,3 +71,13 @@
 | Funktion                      | Beschreibung                          |
 | ----------------------------- | ------------------------------------- |
 | getParamters([int $mode = 0]) | Gibt die Parameter aus der URL zurück |
+
+**Klasse Form**
+
+| Funktion     | Beschreibung                                                                                                                       |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| getInput()   | Gibt die Werte aus der globalen Varibelen $_POST und die gespeicherte Werte aus der Funktion `Form::saveInput()` als Array zurück. |
+| saveInput()  | Speichert die Werte der globalen Variable $_POST in der aktuellen Session ab.                                                      |
+| unsetInput() | Löscht die gespicherten Werte der globalen Variable $_POST in der aktuellen Session ab.                                            |
+
+
