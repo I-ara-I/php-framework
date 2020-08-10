@@ -1,8 +1,10 @@
 # Changelog
 
-## 0.3.0
+## Version 0.3.0
 
 **English**
+
+- ADDED: Class `Form` can be called via `$this->loadSystem('Form')`.
 
 - ADDED: Function `Form::getInput()`. Returns the values from the global variable $_POST and the stored values from the function `Form::saveInput()` as array.
 
@@ -11,6 +13,12 @@
 - ADDED: Function `Form::unsetInput()`. Deletes the saved values of the global variable $_POST in the current session.
 
 - REMOVED: `getUrl()`. Can no longer be called directly from the Base, Model, View and Controller classes.
+
+- ADDED: Class `LinkMap` can be called via `$this->loadConfig('LinkMap')`.
+
+- ADDED: Function `View::getLink($name)`. Returns the link as string from the class `Config\LinkMap`.
+
+- ADDED: Function `View::createLink($link)`. Appends the base URL to the passed string and returns it.
 
 **German**
 
@@ -24,7 +32,13 @@
 
 - ENTFERNT: `getUrl()`. Ist nicht mehr direkt aus den Klassen Base, Model, View und Controller aufrufbar.
 
+- HINZUGEFÜGT: Klasse `LinkMap` ist über `$this->loadConfig('LinkMap')` aufrufbar.
 
+- HINZUGEFÜGT: Funktion `View::getLink($name)`. Gibt den Link als String aus der Klasse `Config\LinkMap` zurück.
+
+- HINZUGEFÜGT: Funktion `View::createLink($link)`. Hängt dem übergebenen String die Basis-URL an und gibt diesen zurück.
+
+---
 
 ## Version 0.2.0
 

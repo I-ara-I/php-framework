@@ -6,11 +6,10 @@
 
 **Callable when inherited from the Base, Model, View or Controller classes**
 
-| Function                       | Description                          |
-| ------------------------------ | ------------------------------------ |
-| loadSystem(string \$className) | Returns the called system object     |
-| loadModel(string \$className)  | Returns the called model object      |
-| getUrl()                       | Returns the URL from the config file |
+| Function                       | Description                      |
+| ------------------------------ | -------------------------------- |
+| loadSystem(string \$className) | Returns the called system object |
+| loadModel(string \$className)  | Returns the called model object  |
 
 **Callable when inherited from the Model class**
 
@@ -24,6 +23,8 @@
 | -------------------------------------------------- | ----------------------------------------------------------------- |
 | render(string/array $template, [array $data = []]) | Loads the given template file(s)                                  |
 | getTemplate(string $template)                      | Returns the defined template from the file Config\TemplateMap.php |
+| getLink(string $name)                              | Returns the link as string from the class `Config\LinkMap`.       |
+| createLink(string $link)                           | Appends the base URL to the passed string and returns it.         |
 
 **Class Parameter:**
 
@@ -51,7 +52,6 @@
 | ------------------------------ | ----------------------------------------- |
 | loadSystem(string \$className) | Gibt das aufgerufene System-Objekt zurück |
 | loadModel(string \$className)  | Gibt das aufgerufene Model-Objekt zurück  |
-| getUrl()                       | Gibt die URL aus der Config-Datei zurück  |
 
 **Abrufbar wenn von der Klasse Model gerbt wird:**
 
