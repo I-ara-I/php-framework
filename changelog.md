@@ -20,6 +20,8 @@
 
 - ADDED: Function `View::createLink($link)`. Appends the base URL to the passed string and returns it.
 
+- ADDED: Function `Base::redirect($name, $useMap = true)`. Redirection to the specified URL.
+
 **German**
 
 - HINZUGEFÜGT: Klasse `Form` ist über `$this->loadSystem('Form')` aufrufbar.
@@ -37,6 +39,8 @@
 - HINZUGEFÜGT: Funktion `View::getLink($name)`. Gibt den Link als String aus der Klasse `Config\LinkMap` zurück.
 
 - HINZUGEFÜGT: Funktion `View::createLink($link)`. Hängt dem übergebenen String die Basis-URL an und gibt diesen zurück.
+
+- HINZUGEFÜGT: Funktion `Base::redirect($name, $useMap = true)`. Weiterleitung zur angegebenen URL.
 
 ---
 

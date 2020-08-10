@@ -65,4 +65,35 @@ class Base
         $config = $container->loadConfig('Config');
         return $config->url;
     }
+
+    /**
+     * Redirection to the specified URL
+     *
+     * @param  string $name Name of the link (LinkMap) or the complete URL
+     * @param  bool $useMap If true, the link is searched in the file 'Config\LinkMap'.
+     * @return false If forwarding is not possible
+     */
+    protected function redirect(string $name, bool $useMap = true)
+    {
+        global $container;
+        $config = $container->loadConfig('Config');
+        $linkMap = $container->loadConfig('LinkMap');
+
+        if ($useMap && array_key_exists($name, $linkMap->map)) {
+            if (!$linkMap->map[$name][1]) {
+                header('Location:' . $config->url . $linkMap->map[$name][0]);
+                exit;
+            } elseif ($linkMap->map[$name][1]) {
+                header('Location:' . $linkMap->map[$name][0]);
+                exit;
+            }
+        }
+
+        if (!$useMap) {
+            header('Location:' . $name);
+            exit;
+        }
+
+        return false;
+    }
 }

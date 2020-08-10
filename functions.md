@@ -6,10 +6,11 @@
 
 **Callable when inherited from the Base, Model, View or Controller classes**
 
-| Function                       | Description                      |
-| ------------------------------ | -------------------------------- |
-| loadSystem(string \$className) | Returns the called system object |
-| loadModel(string \$className)  | Returns the called model object  |
+| Function                                    | Description                      |
+| ------------------------------------------- | -------------------------------- |
+| loadSystem(string \$className)              | Returns the called system object |
+| loadModel(string \$className)               | Returns the called model object  |
+| redirect(string $name, bool $useMap = true) | Redirection to the specified URL |
 
 **Callable when inherited from the Model class**
 
