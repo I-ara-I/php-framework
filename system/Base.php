@@ -55,6 +55,19 @@ class Base
     }
 
     /**
+     * Returns the called helper object from the container
+     *
+     * @param  string $model
+     * @return object
+     */
+    protected function loadHelper(string $className): object
+    {
+        global $container;
+        $helper = $container->loadHelper($className);
+        return $helper;
+    }
+
+    /**
      * Returns the URL from the config file
      *
      * @return string
@@ -95,5 +108,16 @@ class Base
         }
 
         return false;
+    }
+
+    /**
+     * Converts all suitable characters into corresponding HTML codes
+     *
+     * @param  string $value
+     * @return string 
+     */
+    protected function esc(string $value): string
+    {
+        return htmlentities($value, ENT_QUOTES | ENT_HTML401);
     }
 }

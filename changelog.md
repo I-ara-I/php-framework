@@ -6,11 +6,11 @@
 
 - ADDED: Class `Form` can be called via `$this->loadSystem('Form')`.
 
-- ADDED: Function `Form::getInput()`. Returns the values from the global variable $_POST and the stored values from the function `Form::saveInput()` as array.
+- ADDED: Function `Form::getInput()`. Returns the values from the global variable \$\_POST and the stored values from the function `Form::saveInput()` as array.
 
-- ADDED: Function `Form::saveInput()`. Saves the values of the global variable $_POST in the current session.
+- ADDED: Function `Form::saveInput()`. Saves the values of the global variable \$\_POST in the current session.
 
-- ADDED: Function `Form::unsetInput()`. Deletes the saved values of the global variable $_POST in the current session.
+- ADDED: Function `Form::unsetInput()`. Deletes the saved values of the global variable \$\_POST in the current session.
 
 - REMOVED: `getUrl()`. Can no longer be called directly from the Base, Model, View and Controller classes.
 
@@ -22,15 +22,19 @@
 
 - ADDED: Function `Base::redirect($name, $useMap = true)`. Redirection to the specified URL.
 
+- ADDED: Function `Base::esc(string $value)`. Converts all suitable characters into corresponding HTML codes.
+
+- ADDED: Function `Base::loadHelper(string $className)`. Returns the called helper object from the container.
+
 **German**
 
 - HINZUGEFÜGT: Klasse `Form` ist über `$this->loadSystem('Form')` aufrufbar.
 
-- HINZUGEFÜGT: Funktion `Form::getInput()`. Gibt die Werte aus der globalen Varibelen $_POST und die gespeicherte Werte aus der Funktion `Form::saveInput()` als Array zurück.
+- HINZUGEFÜGT: Funktion `Form::getInput()`. Gibt die Werte aus der globalen Varibelen \$\_POST und die gespeicherte Werte aus der Funktion `Form::saveInput()` als Array zurück.
 
-- HINZUGEFÜGT: Funktion `Form::saveInput()`. Speichert die Werte der globalen Variable $_POST in der aktuellen Session ab.
+- HINZUGEFÜGT: Funktion `Form::saveInput()`. Speichert die Werte der globalen Variable \$\_POST in der aktuellen Session ab.
 
-- HINZUGEFÜGT: Funktion `Form::unsetInput()`. Löscht die gespicherten Werte der globalen Variable $_POST in der aktuellen Session ab.
+- HINZUGEFÜGT: Funktion `Form::unsetInput()`. Löscht die gespicherten Werte der globalen Variable \$\_POST in der aktuellen Session ab.
 
 - ENTFERNT: `getUrl()`. Ist nicht mehr direkt aus den Klassen Base, Model, View und Controller aufrufbar.
 
@@ -41,6 +45,10 @@
 - HINZUGEFÜGT: Funktion `View::createLink($link)`. Hängt dem übergebenen String die Basis-URL an und gibt diesen zurück.
 
 - HINZUGEFÜGT: Funktion `Base::redirect($name, $useMap = true)`. Weiterleitung zur angegebenen URL.
+
+- HINZUGEFÜGT: Funktion `Base::esc(string $value)`. Wandelt alle geeigneten Zeichen in entsprechende HTML-Codes um.
+
+- HINZUGEFÜGT: Funktion `Base::loadHelper(string $className)`. Gibt das Helper-Objekt aus dem Container zurück.
 
 ---
 

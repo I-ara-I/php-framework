@@ -34,6 +34,7 @@ class Container
     private const SYSTEM_PATH = 'System\\';
     private const CONFIG_PATH = 'App\\Config\\';
     private const MODEL_PATH = 'App\\Model\\';
+    private const HELPER_PATH = 'App\\Helper\\';
     private $objects = [];
     private $map = [];
 
@@ -96,6 +97,25 @@ class Container
     public function loadConfig(string $class): object
     {
         $class = self::CONFIG_PATH . $class;
+
+        if (isset($this->objects[$class])) {
+            return $this->objects[$class];
+        } else {
+            $object = new $class;
+            $this->objects[$class] = $object;
+            return $this->objects[$class];
+        }
+    }
+
+    /**
+     * Creates or loads the called helper object
+     *
+     * @param  string $class
+     * @return object
+     */
+    public function loadHelper(string $class): object
+    {
+        $class = self::HELPER_PATH . $class;
 
         if (isset($this->objects[$class])) {
             return $this->objects[$class];

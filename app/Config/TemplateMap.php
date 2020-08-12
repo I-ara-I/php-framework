@@ -14,5 +14,6 @@ class TemplateMap
      */
     public $map = [
         'parameters' => ['snippets/header', 'example/parameters', 'snippets/footer'], // Template serves as an example and can be deleted.
+        'form' => ['snippets/header', 'example/form', 'snippets/footer'], // Template serves as an example and can be deleted.
     ];
 }

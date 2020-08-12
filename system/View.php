@@ -87,9 +87,9 @@ class View extends Base
         $linkMap = $container->loadConfig('LinkMap');
 
         if (array_key_exists($name, $linkMap->map)) {
-            if (!$linkMap->map[$name][1]) {
+            if ($linkMap->map[$name][1]) {
                 return $config->url . $linkMap->map[$name][0];
-            } elseif ($linkMap->map[$name][1]) {
+            } elseif (!$linkMap->map[$name][1]) {
                 return $linkMap->map[$name][0];
             }
         }
