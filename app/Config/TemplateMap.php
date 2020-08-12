@@ -5,12 +5,15 @@ namespace App\Config;
 class TemplateMap
 {
 
-    public $map = [];
-
-    public function __construct()
-    {
-        $this->map = [
-            'home' => ['snippets/header', 'index', 'snippets/footer'],
-        ];
-    }
+    /**
+     * Here you can store construction instructions for templates. 
+     * 
+     * EXAMPLE 
+     * * 'home' => ['snippets/header', 'index', 'snippets/footer']
+     * * These can be called with View::getTemplate('home').
+     */
+    public $map = [
+        'parameters' => ['snippets/header', 'example/parameters', 'snippets/footer'], // Template serves as an example and can be deleted.
+        'form' => ['snippets/header', 'example/form', 'snippets/footer'], // Template serves as an example and can be deleted.
+    ];
 }

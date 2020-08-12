@@ -73,4 +73,40 @@ class View extends Base
 
         return false;
     }
+
+    /**
+     * Returns the link as string from the class `Config\LinkMap`.
+     *
+     * @param  string $name
+     * @return string|bool
+     */
+    public function getLink(string $name)
+    {
+        global $container;
+        $config = $container->loadConfig('Config');
+        $linkMap = $container->loadConfig('LinkMap');
+
+        if (array_key_exists($name, $linkMap->map)) {
+            if ($linkMap->map[$name][1]) {
+                return $config->url . $linkMap->map[$name][0];
+            } elseif (!$linkMap->map[$name][1]) {
+                return $linkMap->map[$name][0];
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Appends the base URL to the passed string and returns it.
+     *
+     * @param  string $link
+     * @return string
+     */
+    public function createLink(string $link): string
+    {
+        global $container;
+        $config = $container->loadConfig('Config');
+
+        return $config->url . $link;
+    }
 }

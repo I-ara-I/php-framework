@@ -28,32 +28,6 @@ namespace System;
 
 class Base
 {
-
-
-    /**
-     * Returns the parameters from the URI
-     *
-     * @param  mixed $mode
-     * * @param  int $mode 
-     * * mode = 0 -> Returns an indexed array with all parameters 
-     * * mode = 1 -> Returns an associative array from the passed parameters. 
-     * The first parameter is the key and the second parameter is the value, etc. 
-     * If the number of parameters is odd, the last parameter will be removed.
-     * @return array
-     */
-
-    /*
-    protected function getParameter($mode = 0): array
-    {
-        global $container;
-        $parameter = $container->loadSystem('Parameter');
-
-        $params = $parameter->getParameter($mode);
-
-        return $params;
-    }
-    */
-
     /**
      * Returns the  called system object from the container
      *
@@ -81,6 +55,19 @@ class Base
     }
 
     /**
+     * Returns the called helper object from the container
+     *
+     * @param  string $model
+     * @return object
+     */
+    protected function loadHelper(string $className): object
+    {
+        global $container;
+        $helper = $container->loadHelper($className);
+        return $helper;
+    }
+
+    /**
      * Returns the URL from the config file
      *
      * @return string
@@ -90,5 +77,47 @@ class Base
         global $container;
         $config = $container->loadConfig('Config');
         return $config->url;
+    }
+
+    /**
+     * Redirection to the specified URL
+     *
+     * @param  string $name Name of the link (LinkMap) or the complete URL
+     * @param  bool $useMap If true, the link is searched in the file 'Config\LinkMap'.
+     * @return false If forwarding is not possible
+     */
+    protected function redirect(string $name, bool $useMap = true)
+    {
+        global $container;
+        $config = $container->loadConfig('Config');
+        $linkMap = $container->loadConfig('LinkMap');
+
+        if ($useMap && array_key_exists($name, $linkMap->map)) {
+            if (!$linkMap->map[$name][1]) {
+                header('Location:' . $config->url . $linkMap->map[$name][0]);
+                exit;
+            } elseif ($linkMap->map[$name][1]) {
+                header('Location:' . $linkMap->map[$name][0]);
+                exit;
+            }
+        }
+
+        if (!$useMap) {
+            header('Location:' . $name);
+            exit;
+        }
+
+        return false;
+    }
+
+    /**
+     * Converts all suitable characters into corresponding HTML codes
+     *
+     * @param  string $value
+     * @return string 
+     */
+    protected function esc(string $value): string
+    {
+        return htmlentities($value, ENT_QUOTES | ENT_HTML401);
     }
 }
